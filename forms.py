@@ -25,7 +25,6 @@ class VenueForm(Form):
         'city', validators=[DataRequired()]
     )
     state = SelectField(
-        # TODO (DONE) implement validation logic for state
         'state', validators=[DataRequired()],
         choices=State.choices()
     )
@@ -39,7 +38,6 @@ class VenueForm(Form):
         'image_link'
     )
     genres = SelectMultipleField(
-        # TODO (DONE) implement enum restriction
         'genres', validators=[DataRequired(), AnyOf([
             (choice.value) for choice in Genre ])],
         choices=Genre.choices()
@@ -67,7 +65,6 @@ class ArtistForm(Form):
         'city', validators=[DataRequired()]
     )
     state = SelectField(
-        # TODO (DONE) implement validation logic for state
         'state', validators=[DataRequired()],
         choices= State.choices()
     )
@@ -78,7 +75,6 @@ class ArtistForm(Form):
         'image_link'
     )
     genres = SelectMultipleField(
-        # TODO (DONE) implement enum restriction
         'genres', validators=[DataRequired(), AnyOf([
             (choice.value) for choice in Genre])],
         choices=Genre.choices()

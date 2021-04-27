@@ -23,8 +23,6 @@ class Venue(db.Model):
     seeking_description = db.Column(db.String(300))
     shows = db.relationship('Show', backref='venue', lazy=True, cascade='all, delete')
 
-    # TODO: (DONE) implement any missing fields, as a database migration using Flask-Migrate
-
 class Artist(db.Model):
     __tablename__ = 'Artist'
 
@@ -40,10 +38,6 @@ class Artist(db.Model):
     seeking_venue = db.Column(db.Boolean, nullable=False)
     seeking_description = db.Column(db.String(300))
     shows = db.relationship('Show', backref='artist', lazy=True, cascade='all, delete')
-
-    # TODO: (DONE) implement any missing fields, as a database migration using Flask-Migrate
-
-# TODO (DONE) Implement Show and Artist models, and complete all model relationships and properties, as a database migration.
 
 class Show(db.Model):
     __tablename__ = 'Show'
